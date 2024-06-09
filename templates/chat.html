@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack's Profile Visitor's Book</title>
+    <link rel="stylesheet" href="./static/chat.css"> 
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-window">
+        <div class="chat-messages" id="chat-messages">
+            <!-- 채팅 메시지가 여기에 표시됩니다. -->
+        </div>
+        <input type="text" id="name-input" placeholder="이름을 입력하세요..."> <!-- 이름 입력란 -->
+        <input type="text" id="message-input" placeholder="메시지를 입력하세요...">
+        <button onclick="sendMessage()">전송</button>
+    </div>
+</div>
+
+<button class="return-button" onclick="goToMainPage()">메인 페이지로 돌아가기</button>
+
+<script src="./static/chat.js" defer></script> 
+
+<footer>
+    <p>Yu Bin Jeong in Kwangwoon University</p>
+</footer>
+
+</body>
+</html>

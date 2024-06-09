@@ -1,0 +1,456 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+html{
+    font-size: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.link li{
+    list-style:none;
+}
+
+.main-nav {
+    justify-content: center;
+    display: flex; /*nav 수평정렬*/
+    font-size: 1.35rem; /*nav 폰트 사이즈*/ 
+    text-transform: uppercase;
+    position: fixed; /*top 0에 고정 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    list-style: none; /*list 불릿 제거 */
+    background-color: white; /* Add background color to avoid transparency issues */
+    padding: 10px 0; /* Add some padding for better visual appearance */
+}
+
+.main-nav li {
+    list-style: none; 
+    margin-left: 65px;
+} /*nav 항목별 띄어쓰기 간격*/
+
+.main-nav a {
+    color: #888888;
+}
+
+.link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top:35px;
+    margin-right: 35px;
+  }
+  
+
+  .quick-icons li.icon-active::before {
+    background-color: #0b040c;
+  }
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px; /* 패딩을 늘려서 크기를 키움 */
+    border: 2px solid #ddd; /* 테두리 추가 */
+    border-radius: 10px; /* 테두리 모서리 둥글게 */
+    width: 90%; /* 너비를 늘려서 페이지의 대부분을 차지하게 함 */
+    max-width: 1200px; /* 최대 너비를 늘림 */
+    margin: auto;
+    background-color: #f9f9f9; /* 배경색 추가 */
+    min-height: 80vh; /* 최소 높이를 설정하여 화면의 대부분을 차지하게 함 */
+    position: relative;
+}
+
+.profile_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.profile_text.left, .profile_text.right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile_picture_container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.profile_picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.profile_picture_container:hover .front {
+    transform: rotateY(180deg);
+}
+
+.profile_picture_container:hover .back {
+    transform: rotateY(0deg);
+}
+
+.profile_text.right {
+    text-align: right;
+}
+
+.profile_text.left {
+    text-align: left;
+}
+
+
+.tmi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+/* Individual section styling */
+.tmi-experience {
+    flex: 1;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out; /* Transition z-index */
+    transform: scale(0.9) translateZ(-50px); /* Initial state: smaller and further back */
+    padding: 30px; /* 가로 패딩을 10px로 설정 */
+}
+
+.tmi-experience:hover {
+    transform: scale(0.98) translateZ(0); /* Bring forward on hover */
+    z-index: 10; /* Bring to the front */
+}
+
+/* Section headers */
+.tmi-experience h3 {
+    background-color: #e2d4ab;
+    color: #554f4f;
+    margin: 0;
+    padding: 10px 20px; 
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Section content */
+.tmi-experience h4 {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.image-text-container1 {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    margin-bottom: 20px; /* 아래쪽 간격 설정 */
+}
+
+.image-text-container1 img {
+    width: 200px; /* 이미지 폭 설정 */
+    height: 130px; /* 이미지 높이 자동 조절 */
+    margin-right: 10px; /* 이미지 오른쪽 간격 설정 */
+}
+
+.image-text-container1 h4 {
+    margin: 0; /* 기본 여백 제거 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.image-text-container2 {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    margin-bottom: 20px; /* 아래쪽 간격 설정 */
+}
+
+.image-text-container2 img {
+    width: 200px; /* 이미지 폭 설정 */
+    height: 130px; /* 이미지 높이 자동 조절 */
+    margin-right: 30px; /* 이미지 오른쪽 간격 설정 */
+}
+
+.image-text-container2 h4 {
+    margin: 0; /* 기본 여백 제거 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+
+
+
+/* Volunteer section styling */
+.volunteer {
+    border-left: 5px solid #9cbea3;
+}
+
+/* Club section styling */
+.club {
+    border-left: 5px solid #7eb5bd;
+}
+
+/* Army and school background section styling */
+.army_school {
+    border-left: 5px solid #e9b6d3;
+}
+
+/* Adding icons and ensuring they are properly spaced */
+h4 {
+    position: relative;
+    padding-left: 30px;
+}
+
+h4::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Adding hover effects to individual items */
+h4:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+    border-left: 3px solid #007BFF;
+    transition: background-color 0.3s ease-in-out, border-left 0.3s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tmi-experience {
+        flex: 100%;
+    }
+}
+
+
+.tmi_song {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+    perspective: 1000px; /* Add perspective for 3D effect */
+    text-align: center;
+}
+
+.song-title {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Set position to relative */
+}
+
+.song-title::before,
+.song-title::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Position the line in the middle vertically */
+    width: 40%; /* Adjust the width of the line */
+    height: 1px; /* Set the thickness of the line */
+    background-color: #843c3c; /* Set the color of the line */
+}
+
+.song-title::before {
+    left: 0; /* Position the line to the left */
+    margin-left: -10%; /* Adjust the position */
+}
+
+.song-title::after {
+    right: 0; /* Position the line to the right */
+    margin-right: -10%; /* Adjust the position */
+}
+
+/* Individual song styling */
+.tmi_song > div {
+    min-width: 300px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    transform: rotateY(10deg) scale(0.9); /* Initial state: slightly rotated and smaller */
+}
+
+.tmi_song > div:hover {
+    transform: rotateY(0deg) scale(1); /* Straighten and enlarge on hover */
+    z-index: 10; /* Bring to the front */
+}
+
+/* Iframe styling */
+.iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Section headers */
+.tmi_song h3 {
+    background-color: #7497bc;
+    color: #fff;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tmi_song > div {
+        min-width: 250px;
+        transform: rotateY(5deg) scale(0.95);
+    }
+
+    .tmi_song > div:hover {
+        transform: rotateY(0deg) scale(1.05);
+    }
+}
+
+
+
+.tmi_sns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    flex-wrap: wrap;
+    max-height: calc(100vh - 100px); /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling when necessary */
+    padding-bottom: 300px; /* Add padding to the bottom */
+}
+
+.sns-title {
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative; /* Set position to relative */
+}
+
+.sns-title::before,
+.sns-title::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Position the line in the middle vertically */
+    width: 40%; /* Adjust the width of the line */
+    height: 1px; /* Set the thickness of the line */
+    background-color: #2614c3; /* Set the color of the line */
+}
+
+.sns-title::before {
+    left: 0; /* Position the line to the left */
+    margin-left: -10%; /* Adjust the position */
+}
+
+.sns-title::after {
+    right: 0; /* Position the line to the right */
+    margin-right: -10%; /* Adjust the position */
+}
+
+/* Individual SNS card styling */
+.tmi_sns div {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    perspective: 600px;
+}
+
+.tmi_sns div a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Envelope styling */
+.tmi_sns div::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.6s ease-in-out;
+    transform-origin: top;
+    transform: rotateX(-90deg); /* Initial state: envelope closed */
+    z-index: 1;
+}
+
+.tmi_sns div:hover::before {
+    transform: rotateX(0deg); /* Open the envelope on hover */
+}
+
+/* Business card styling */
+.tmi_sns div img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(0); /* Initial state: card inside envelope */
+    transition: transform 0.6s ease-in-out;
+}
+
+.tmi_sns div:hover img {
+    transform: translateY(100%); /* Slide the card out on hover */
+}
+
+/* Text styling */
+.tmi_sns div p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tmi_sns {
+        flex-direction: column;
+    }
+
+    .tmi_sns div {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
